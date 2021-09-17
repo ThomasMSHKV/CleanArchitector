@@ -1,10 +1,12 @@
 package com.example.usecasetask.domain.usecase
 
 import com.example.usecasetask.domain.model.UserName
+import com.example.usecasetask.domain.model.repository.UserRepository
 
-class GetUserNameUseCase {
+class GetUserNameUseCase(private val userRepository: UserRepository) {
 
     fun execute() : UserName {
-        return UserName(firstName = "Amin", lastName = "Mereshkov")
+        return userRepository.getName()
+
     }
 }
