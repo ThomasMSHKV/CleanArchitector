@@ -13,9 +13,9 @@ import com.example.usecasetask.domain.usecase.SaveUserNameUseCase
 
 class MainActivity : AppCompatActivity() {
 
-    private val userRepository = UserRepositoryImpl()
-//    private val getUserNameUseCase = GetUserNameUseCase()
-//    private val saveUserNameUseCase = SaveUserNameUseCase(userRepository = userRepository)
+    private val userRepository by lazy(LazyThreadSafetyMode.NONE) {UserRepositoryImpl(context = applicationContext) }
+    private val getUserNameUseCase by lazy(LazyThreadSafetyMode.NONE) {GetUserNameUseCase(userRepository = userRepository)}
+    private val saveUserNameUseCase by lazy(LazyThreadSafetyMode.NONE) {SaveUserNameUseCase(userRepository = userRepository)}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,12 +29,12 @@ class MainActivity : AppCompatActivity() {
         sendButton.setOnClickListener {
             val text = dataEditText.text.toString()
             val params = SaveUserNameParam(name = text)
-            val result: Boolean = userRepository.saveName(saveParam = params)
+            val result: Boolean = saveUserNameUseCase.execute(param = params)
             dataTextView.text = "Save result = $result"
         }
 
         receiveButton.setOnClickListener {
-            val userName: UserName = userRepository.getName()
+            val userName: UserName = getUserNameUseCase.execute()
             dataTextView.text = "${userName.firstName} ${userName.lastName}"
         }
     }
