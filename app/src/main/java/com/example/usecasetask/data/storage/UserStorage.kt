@@ -1,11 +1,10 @@
 package com.example.usecasetask.data.storage
 
-import com.example.usecasetask.domain.model.SaveUserNameParam
-import com.example.usecasetask.domain.model.UserName
+import com.example.usecasetask.data.storage.model.User
 
 interface UserStorage {
 
-    fun save(saveParam: SaveUserNameParam): Boolean
+    fun save(user: User): Boolean
 
-    fun get(): UserName
+    fun get(): User
 }
