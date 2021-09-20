@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "UseCaseTask"
 include ':app'
+include ':data'
