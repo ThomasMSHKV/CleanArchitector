@@ -1,8 +1,8 @@
-package com.example.usecasetask.data.storage.sharedprefs
+package com.usecasetask.data.storage.sharedprefs
 
 import android.content.Context
-import com.example.usecasetask.data.storage.UserStorage
-import com.example.usecasetask.data.storage.model.User
+import com.usecasetask.data.storage.UserStorage
+import com.usecasetask.data.storage.model.User
 
 private const val SHARED_PREFS_NAME = "shared_prefs_name"
 private const val KEY_FIRST_NAME = "first_name"

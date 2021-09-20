@@ -1,4 +1,4 @@
-package com.example.usecasetask.data.storage.model
+package com.usecasetask.data.storage.model
 
 class User(val firstName: String, val lastName: String){
 

@@ -5,15 +5,17 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import com.example.usecasetask.data.repository.UserRepositoryImpl
-import com.example.usecasetask.domain.model.SaveUserNameParam
-import com.example.usecasetask.domain.model.UserName
-import com.example.usecasetask.domain.usecase.GetUserNameUseCase
-import com.example.usecasetask.domain.usecase.SaveUserNameUseCase
+import com.usecasetask.data.repository.UserRepositoryImpl
+import com.usecasetask.data.storage.UserStorage
+import com.usecasetask.data.storage.sharedprefs.SharedPrefUserStorage
+import com.usecasetask.domain.model.SaveUserNameParam
+import com.usecasetask.domain.model.UserName
+import com.usecasetask.domain.usecase.GetUserNameUseCase
+import com.usecasetask.domain.usecase.SaveUserNameUseCase
 
 class MainActivity : AppCompatActivity() {
 
-    private val userRepository by lazy(LazyThreadSafetyMode.NONE) {UserRepositoryImpl(context = applicationContext) }
+    private val userRepository by lazy(LazyThreadSafetyMode.NONE) {UserRepositoryImpl(userStorage = SharedPrefUserStorage(context = applicationContext)) }
     private val getUserNameUseCase by lazy(LazyThreadSafetyMode.NONE) {GetUserNameUseCase(userRepository = userRepository)}
     private val saveUserNameUseCase by lazy(LazyThreadSafetyMode.NONE) {SaveUserNameUseCase(userRepository = userRepository)}
 

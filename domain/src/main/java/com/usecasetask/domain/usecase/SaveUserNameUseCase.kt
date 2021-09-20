@@ -1,8 +1,7 @@
-package com.example.usecasetask.domain.usecase
+package com.usecasetask.domain.usecase
 
-import com.example.usecasetask.data.repository.UserRepositoryImpl
-import com.example.usecasetask.domain.model.SaveUserNameParam
-import com.example.usecasetask.domain.model.repository.UserRepository
+import com.usecasetask.domain.model.SaveUserNameParam
+import com.usecasetask.domain.model.repository.UserRepository
 
 class SaveUserNameUseCase(private val userRepository: UserRepository) {
 

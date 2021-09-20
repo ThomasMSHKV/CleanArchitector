@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/UseCaseTask.iml" filepath="$PROJECT_DIR$/.idea/modules/UseCaseTask.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/UseCaseTask.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/UseCaseTask.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/UseCaseTask.data.iml" filepath="$PROJECT_DIR$/.idea/modules/data/UseCaseTask.data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/UseCaseTask.domain.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/UseCaseTask.domain.iml" />
     </modules>
   </component>
 </project>

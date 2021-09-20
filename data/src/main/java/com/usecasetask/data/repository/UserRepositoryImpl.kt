@@ -1,10 +1,10 @@
-package com.example.usecasetask.data.repository
+package com.usecasetask.data.repository
 
-import com.example.usecasetask.data.storage.model.User
-import com.example.usecasetask.data.storage.UserStorage
-import com.example.usecasetask.domain.model.SaveUserNameParam
-import com.example.usecasetask.domain.model.UserName
-import com.example.usecasetask.domain.model.repository.UserRepository
+import com.usecasetask.data.storage.model.User
+import com.usecasetask.data.storage.UserStorage
+import com.usecasetask.domain.model.SaveUserNameParam
+import com.usecasetask.domain.model.UserName
+import com.usecasetask.domain.model.repository.UserRepository
 
 
 class UserRepositoryImpl(private val userStorage: UserStorage) : UserRepository {
